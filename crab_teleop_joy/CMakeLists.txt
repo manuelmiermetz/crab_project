@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   joy
   roscpp
   std_msgs
+  crab_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -28,6 +29,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES crab_teleop_joy
 #  CATKIN_DEPENDS ps3joy roscpp std_msgs
+   CATKIN_DEPENDS crab_msgs
 #  DEPENDS system_lib
 )
 

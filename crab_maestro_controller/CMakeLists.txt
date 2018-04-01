@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  crab_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -27,7 +28,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES maestro_controller
 #  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+  DEPENDS crab_msgs
 )
 
 ###########

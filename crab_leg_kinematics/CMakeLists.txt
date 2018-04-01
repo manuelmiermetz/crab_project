@@ -6,12 +6,13 @@ project(crab_leg_kinematics)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   kdl_parser
-  orocos_kdl
   roscpp
   rospy
   std_msgs
+  crab_msgs
 )
 
+find_package(orocos_kdl)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -30,6 +31,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES ${PROJECT_NAME}
 #  CATKIN_DEPENDS kdl_parser roscpp rospy std_msgs
+   CATKIN_DEPENDS crab_msgs
 #  DEPENDS message_runtime
 )
 

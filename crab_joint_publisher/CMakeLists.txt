@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+  crab_msgs
 )
 
 
@@ -26,6 +27,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES crab_joint_publisher
 #  CATKIN_DEPENDS joint_state_publisher roscpp sensor_msgs std_msgs
+   CATKIN_DEPENDS crab_msgs
 #  DEPENDS system_lib
 )
 

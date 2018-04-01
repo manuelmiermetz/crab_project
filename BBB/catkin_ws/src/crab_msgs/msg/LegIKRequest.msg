@@ -1,3 +1,0 @@
-int32 leg_number
-crab_msgs/LegJointsState current_joints
-crab_msgs/LegPositionState target_position
