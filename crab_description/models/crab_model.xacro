@@ -29,7 +29,7 @@
 	<xacro:property name="joint_lower_limit" value="-${1.5}" />
 	<xacro:property name="joint_upper_limit" value="${1.5}" />
 	<xacro:property name="joint_effort" value="10000" />
-	<xacro:property name="joint_velocity" value="100" />
+	<xacro:property name="joint_velocity" value="10" />
 
 <!-- Leg macros -->
 	<xacro:macro name="leg" params="side num x y angle">

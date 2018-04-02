@@ -9,6 +9,9 @@ ros::Publisher joint_msg_pub;
 sensor_msgs::JointState joint_msg;
 
 void chatterLegsState (const LegsStateConstPtr& state){
+    joint_msg.header.seq += 1;
+    joint_msg.header.stamp = ros::Time::now();
+    joint_msg.header.frame_id = "crab";
 	std::string joint_name;
 	for (int name=0; name<3; name++){
 		for(int suf=0; suf<6; suf++){

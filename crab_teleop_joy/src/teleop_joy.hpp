@@ -13,6 +13,8 @@
 // button axes go from 0 to -1
 // stick axes go from 0 to +/-1
 
+
+
 #define PS3_BUTTON_SELECT            0
 #define PS3_BUTTON_STICK_LEFT        1
 #define PS3_BUTTON_STICK_RIGHT       2
@@ -75,6 +77,7 @@ class TeleopJoy {
 
 		void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
 
+/*
 		const static int axis_body_roll = PS3_AXIS_STICK_LEFT_LEFTWARDS;
 		const static int axis_body_pitch = PS3_AXIS_STICK_LEFT_UPWARDS;
 		const static int axis_body_yaw = PS3_AXIS_STICK_RIGHT_LEFTWARDS;
@@ -91,6 +94,23 @@ class TeleopJoy {
 		const static int axis_alpha = PS3_AXIS_STICK_RIGHT_LEFTWARDS;
 		const static int axis_scale = PS3_AXIS_STICK_RIGHT_UPWARDS;
 		const static int button_imu = PS3_BUTTON_ACTION_CROSS;
+*/
+		const static int axis_body_roll = 0;                                    // xbox left stick
+		const static int axis_body_pitch = 1;                                   // xbox left stick
+		const static int axis_body_yaw = 3;                                     // xbox right stick
+		const static int axis_body_y_off = 0;                                   // xbox left stick
+		const static int axis_body_x_off = 1;                                   // xbox left stick
+		const static int axis_body_z_off = 4;                                   // xbox right stick
+		const static int button_left_shift = 4;                                 // xbox LB
+		const static int button_right_shift = 5;                                // xbox RB
+		const static int button_right_shift_2 = 1;                              // xbox B
+		const static int button_start = 7;                                      // xbox start
+		const static int axis_fi_x = 0;                                         // xbox left stick
+		const static int axis_fi_y = 1;                                         // xbox left stick
+		const static int button_gait_switch = 0;                                // xbox A
+		const static int axis_alpha = 3;                                        // xbox right stick
+		const static int axis_scale = 4;                                        // xbox right stick
+		const static int button_imu = 2;                                        // xbox X
 };
 
 

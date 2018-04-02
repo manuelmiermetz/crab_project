@@ -53,6 +53,7 @@ void TeleopJoy::joyCallback(const sensor_msgs::Joy::ConstPtr& joy){
 			gait_command.cmd = gait_command.STOP;
 		}
 		gait_cmd_pub.publish(gait_command);
+		ROS_INFO_STREAM("gait_flag  " << gait_flag);
 		ros::Duration(0.5).sleep();
 	}
 
@@ -64,7 +65,7 @@ void TeleopJoy::joyCallback(const sensor_msgs::Joy::ConstPtr& joy){
 			body_state.pitch = -0.25 * joy->axes[axis_body_pitch];
 			body_state.yaw = -0.28 * joy->axes[axis_body_yaw];
 			move_body_pub.publish(body_state);
-	//		ROS_INFO_STREAM("roll  " << body_state.roll << "  pitch  " << body_state.pitch << " yaw  " << body_state.yaw);
+	        ROS_INFO_STREAM("roll  " << body_state.roll << "  pitch  " << body_state.pitch << " yaw  " << body_state.yaw);
 		}
 		// Offset Signal
 		if (joy->buttons[button_right_shift]){
@@ -77,7 +78,7 @@ void TeleopJoy::joyCallback(const sensor_msgs::Joy::ConstPtr& joy){
 				body_state.z = -0.1 * joy->axes[axis_body_z_off] - z;
 			}
 			move_body_pub.publish(body_state);
-	//		ROS_INFO_STREAM("x  " << body_state.x << "  y  " << body_state.y << "  z  " << body_state.z);
+			ROS_INFO_STREAM("x  " << body_state.x << "  y  " << body_state.y << "  z  " << body_state.z);
 		}
 		// Gait Signals
 		if (!joy->buttons[button_left_shift] && !joy->buttons[button_right_shift]){
@@ -102,7 +103,7 @@ void TeleopJoy::joyCallback(const sensor_msgs::Joy::ConstPtr& joy){
 
 			// Gait Alpha and Direction Signal
 			if (joy->axes[axis_alpha] != 0 || joy->axes[axis_scale] != 0){
-	//			ROS_INFO_STREAM("y  " << joy->axes[axis_direction] << "  x  " << joy->axes[axis_alpha]);
+				ROS_INFO_STREAM("y  " << joy->axes[axis_scale] << "  x  " << joy->axes[axis_alpha]);
 				if (!gait_flag){
 					gait_command.cmd = gait_command.RUNRIPPLE;
 				}
